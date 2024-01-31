@@ -10,11 +10,15 @@ const elfos = new Racas("elfos","orcs","undeads","amarelo");
 const orcs = new Racas("orcs","undeads","elfos","verde");
 const undeads = new Racas("undeads","elfos","orcs","preto");
 
-function Personagem(nome,level,tipo){
+function Personagem(nome, level, tipo) {
     this.nome = nome;
     this.level = level;
-    
-    Racas.call(this,tipo)
+
+    if (tipo instanceof Racas) {
+        Racas.call(this, tipo.tipo, tipo.bom_contra, tipo.mal_contra, tipo.cor);
+    } else {
+        Racas.call(this, tipo, "", "", ""); // Preencha os valores padrão conforme necessário
+    }
 }
 
 
