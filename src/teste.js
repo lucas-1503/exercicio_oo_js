@@ -19,17 +19,12 @@ const arrayalunos = [joao,pedro,maria]
 
 console.log(arrayalunos)
 
-const alunosAprovados = []
+arrayalunos.forEach(aluno =>{
+    if(aluno.nota >= 6)
+    console.log(aluno)
+})
 
-for(let i=0; i<arrayalunos.length;i++){
-    if (i.nota >= 6){
-        alunosAprovados += arrayalunos[i]
-    }
-    return alunosAprovados;
-}
-    
 
-console.log(alunosAprovados)
 
 
 
